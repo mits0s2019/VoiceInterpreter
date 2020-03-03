@@ -15,12 +15,12 @@ public class TelephoneService {
 
     public static void create(String number){
 
-        if( (number.matches( MOBILE_PREFIX10+".*")) ||
-                (number.matches( MOBILE_PREFIX14+".*"))){
+        if( (number.startsWith( MOBILE_PREFIX10)) ||
+                (number.startsWith( MOBILE_PREFIX14))){
             new Mobile(number);
 
-        }else if((number.matches( PHONE_PREFIX10+".*")) ||
-                (number.matches( PHONE_PREFIX14+".*"))){
+        }else if((number.startsWith( PHONE_PREFIX10)) ||
+                (number.startsWith( PHONE_PREFIX14))){
             new Phone(number);
         }else{
             Telephone.getTelephoneList().put(number, Validator.INVALID);
