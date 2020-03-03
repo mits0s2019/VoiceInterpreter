@@ -20,7 +20,7 @@ public class AmbiguitieService {
         int[] arrayInt = ArrayUtils.stringToInt(arrayInput);
         List<Integer> arrayInputList = Arrays.stream(arrayInt).boxed().collect(Collectors.toList());
 
-        AmbiguitieService.recursionList(new ArrayList<Integer>(Arrays.asList(2,10,600,20,30,5,6)), 0);
+        AmbiguitieService.recursionList(new ArrayList<Integer>(Arrays.asList(2,10,600,20,35,4,5)), 0);
     }
 
     private static void createAmbiguitieList(Integer[][] array,List<Integer>list, int index) {
@@ -75,6 +75,7 @@ public class AmbiguitieService {
                 }
                 createAmbiguitieList(array,list,index);
             }
+
         } else {
             recursionList(list, index + 1);
         }

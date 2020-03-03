@@ -20,7 +20,7 @@ public class PrintingMap<K,V> {
             Map.Entry<K, V> entry = iter.next();
             sb.append("Interpretation "+i+" : ");
             sb.append(entry.getKey());
-            sb.append(" ");
+            sb.append("   \t   ");
             sb.append("[phone number : ");
             sb.append(entry.getValue());
             sb.append(']');
