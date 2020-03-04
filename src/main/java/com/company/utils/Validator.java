@@ -32,7 +32,7 @@ public class Validator {
     }
 
     public static boolean isNumeric(String inputNumber){
-       boolean numeric=inputNumber.matches("(\\d+\\s*)+");
-        return numeric;
+        return inputNumber.matches("(\\d+\\s*)+");
+
     }
 }

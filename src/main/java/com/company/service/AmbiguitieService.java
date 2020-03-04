@@ -1,6 +1,7 @@
 package com.company.service;
 
 
+import com.company.ExceptionHandler;
 import com.company.model.AmbiguitieList;
 import com.company.utils.ArrayUtils;
 
@@ -19,7 +20,7 @@ public class AmbiguitieService {
      *
      * @param inputNumber users input number
      */
-    public static void findAmbiguities(String inputNumber) {
+    public static void findAmbiguities(String inputNumber) throws ExceptionHandler {
         String[] arrayInput = inputNumber.split("\\s+");
         int[] arrayInt = ArrayUtils.stringToInt(arrayInput);
         List<Integer> arrayInputList = Arrays.stream(arrayInt).boxed().collect(Collectors.toList());
@@ -31,9 +32,9 @@ public class AmbiguitieService {
     /**
      *    Whenever this method is called, it saves the @param list (the first time it saves the users input).
      * Checks the index of the list . If its a two/three digit number then calls the corresponding method and gets back a two dimentional array
-     * with all the ambiguities and then calls @createAmbiguitieList method to save the new list.
+     * with all the ambiguities and then calls @createAmbiguitieList method to edit the new list.
      */
-    public static void recursionList(List<Integer> list, int index) {
+    public static void recursionList(List<Integer> list, int index) throws ExceptionHandler {
 
         AmbiguitieList.getAmbiguities().add(ArrayUtils.listIntegerToString(list));  //adding the converted String list to ambiguities list
 
@@ -48,7 +49,9 @@ public class AmbiguitieService {
                 createAmbiguitieList(array,list,index);
             }
             else {
-                Integer[][] array = threeDigitsNeighborNumber(list,index);
+                Integer[][] array = new Integer[0][];
+                    array = threeDigitsNeighborNumber(list,index);
+
 
                 for (int i = 0; i < array.length; i++){
                     list.remove(index);
@@ -75,7 +78,13 @@ public class AmbiguitieService {
         }
     }
 
-    private static void createAmbiguitieList(Integer[][] array,List<Integer>list, int index) {
+    /**
+     *@param list                             [2,10,30,5]
+     * @param array [{30,5},{35}}                  /  \
+     * @result newList                   [2,10,30,5]  [2,10,35]    having created the new lists then @recursionList() is called again
+     *                                                             and the index moves to the next number .
+     */
+    private static void createAmbiguitieList(Integer[][] array,List<Integer>list, int index) throws ExceptionHandler {
 
         for (int i = 0; i < array.length; i++) {
             List<Integer> newList = new ArrayList<>(list);

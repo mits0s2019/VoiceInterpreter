@@ -18,16 +18,20 @@ public class VoiceInterpreter {
         InputNumber.set(new Scanner(System.in).nextLine().trim());
 
         if(InputNumber.validate()){
-
+            System.out.println("***************************************************************");
             System.out.println("You entered : "+InputNumber.removeSpaces());
-            System.out.println("*************************************");
+            System.out.println("***************************************************************");
 
-            AmbiguitieService.findAmbiguities(InputNumber.get());
+            try {
+                AmbiguitieService.findAmbiguities(InputNumber.get());
+            } catch (Exception ex) {
+                System.out.println(new ExceptionHandler(ex.getMessage()));
+            }
 
             AmbiguitieList.getAmbiguities().stream().forEach(number-> TelephoneService.create(number));
 
             System.out.println(new PrintingMap<>(Telephone.getTelephoneList()));
-            System.out.println("*************************************");
+            System.out.println("***************************************************************");
 
         }
         else{
