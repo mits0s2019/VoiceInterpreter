@@ -3,6 +3,10 @@ package com.company.utils;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * PrintingMap is a map in order to print the final result
+ */
+
 public class PrintingMap<K,V> {
 
     private Map<K, V> map;

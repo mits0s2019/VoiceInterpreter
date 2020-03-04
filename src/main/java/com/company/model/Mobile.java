@@ -1,9 +1,10 @@
-package com.company;
+package com.company.model;
+
 
 import com.company.utils.Validator;
 
 
-public class Mobile extends Telephone{
+public class Mobile extends Telephone {
 
     public final static String MOBILE_PREFIX10="69";
     public final static String MOBILE_PREFIX14="003069";

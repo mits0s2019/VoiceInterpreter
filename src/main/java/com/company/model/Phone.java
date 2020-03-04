@@ -1,5 +1,6 @@
-package com.company;
+package com.company.model;
 
+import com.company.model.Telephone;
 import com.company.utils.Validator;
 
 public class Phone extends Telephone {

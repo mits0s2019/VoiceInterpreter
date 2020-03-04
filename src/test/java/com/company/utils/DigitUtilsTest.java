@@ -11,6 +11,10 @@ class DigitUtilsTest {
 
     @Test
     void isTwoDigit() {
+
+        List list= Arrays.asList(3,5,22,143,25);
+
+        assertEquals(true,DigitUtils.isTwoDigit(list,2));
     }
 
     @Test
@@ -21,12 +25,9 @@ class DigitUtilsTest {
         assertEquals(true,DigitUtils.isThreeDigit(list,3));
     }
 
-    @Test
-    void neighborNumbers() {
-    }
 
     @Test
-    void neighborNumberForThreDigits() {
+    void splitThreeDigit() {
 
         int number=615;
 
