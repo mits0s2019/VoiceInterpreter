@@ -10,6 +10,9 @@ public class DigitUtils {
     public static boolean isThreeDigit(List<Integer> list, int index){
         return list.get(index)>=100 && list.get(index)<=1000;
     }
+    public static boolean isThreeDigit( int index){
+        return index>=100 && index<=1000;
+    }
 
     public static Integer[][] neighborNumbers(int num1, Integer num2) {
 
@@ -59,6 +62,7 @@ public class DigitUtils {
             if(list.size()>index+1){
 
 
+
                 if(list.size()>index+2){
                     if(list.get(index+1)%10==0){
                         if(list.get(index+2)<10){
@@ -78,16 +82,26 @@ public class DigitUtils {
                                     {list.get(index) + list.get(index+1)}};
                         }
                         else{
-                            System.out.println("111111111111");
                             return new Integer[][]{{list.get(index),list.get(index+1)},
                                                     {list.get(index) + list.get(index+1)}};
                         }
                     }
+                    else{
+                        return new Integer[][]{{list.get(index),list.get(index+1)},
+                                {list.get(index)+list.get(index+1)}};
+                    }
+                }else if(isThreeDigit(list.get(index+1))){
+                    return new Integer[][]{{list.get(index)}};  ///////////////////////////////////////
                 }
             }
-
+            if(isThreeDigit(list.get(index))){
+                return new Integer[][]{{list.get(index)}};
+            }
+            else{
+                return new Integer[][]{{list.get(index),list.get(index+1)},
+                        {list.get(index)+list.get(index+1)}};
+            }
         }
-        System.out.println("NO");
         return  null;
     }
 
