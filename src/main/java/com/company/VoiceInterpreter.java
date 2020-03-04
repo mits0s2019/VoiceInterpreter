@@ -27,7 +27,6 @@ public class VoiceInterpreter {
             } catch (Exception ex) {
                 System.out.println(new ExceptionHandler(ex.getMessage()));
             }
-
             AmbiguitieList.getAmbiguities().stream().forEach(number-> TelephoneService.create(number));
 
             System.out.println(new PrintingMap<>(Telephone.getTelephoneList()));

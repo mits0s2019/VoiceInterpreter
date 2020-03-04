@@ -11,9 +11,8 @@ public class InterpretationService {
 
     /**
      * This method takes two numbers as an input... If The first number is two digit then
-     * 35,5               30 2
-     * /  \               /  \
-     *
+     *                                                          35,5               30 2
+     *                                                          /  \               /  \
      * @return Array[][]  -->                             [35,5] [30,5,5]     [30,2]  [32]
      */
     public static Integer[][] twoDigitsneighborNumbers(int num1, Integer num2) {

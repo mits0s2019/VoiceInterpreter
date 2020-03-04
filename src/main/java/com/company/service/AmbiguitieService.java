@@ -49,10 +49,7 @@ public class AmbiguitieService {
                 createAmbiguitieList(array,list,index);
             }
             else {
-                Integer[][] array = new Integer[0][];
-                    array = threeDigitsNeighborNumber(list,index);
-
-
+                Integer[][] array =threeDigitsNeighborNumber(list,index);
                 for (int i = 0; i < array.length; i++){
                     list.remove(index);
                     System.out.println(Arrays.toString(array[i]));
