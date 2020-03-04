@@ -23,10 +23,8 @@ public class DigitUtils {
 
                     return new Integer[][]{{num1, num2}, {num1 + firstDigit, remainder}};
 
-                }else if(num2>100){
-
-
-                    return new Integer[][]{{num1, num2}};
+                }else if(num2>=100){
+                    return new Integer[][]{{num1}};
                 }
                 return new Integer[][]{{num1, num2}, {num1 + num2}};
 
@@ -54,7 +52,7 @@ public class DigitUtils {
     }
 
 
-    public static Integer[][] threeDigitsneighborNumber(List<Integer> list,int index){
+    public static Integer[][] threeDigitsNeighborNumber(List<Integer> list,int index){
 
         if(list.get(index)%100==0) {
 
@@ -75,8 +73,13 @@ public class DigitUtils {
                                                    {list.get(index) + list.get(index+1),list.get(index+2)},
                                                    {list.get(index)+list.get(index+1)+getFirstDigitOfNumber(splitedTwoDigitNumber[0]),splitedTwoDigitNumber[1]}};
                         }
+                        else if(list.get(index+2)>=10 && list.get(index+2)<99 && list.get(index+2)%10==0){
+                            return new Integer[][]{{list.get(index),list.get(index+1)},
+                                    {list.get(index) + list.get(index+1)}};
+                        }
                         else{
-                            return new Integer[][]{{list.get(index), list.get(index+1)},
+                            System.out.println("111111111111");
+                            return new Integer[][]{{list.get(index),list.get(index+1)},
                                                     {list.get(index) + list.get(index+1)}};
                         }
                     }

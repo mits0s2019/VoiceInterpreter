@@ -20,7 +20,7 @@ public class AmbiguitieService {
         int[] arrayInt = ArrayUtils.stringToInt(arrayInput);
         List<Integer> arrayInputList = Arrays.stream(arrayInt).boxed().collect(Collectors.toList());
 
-        AmbiguitieService.recursionList(new ArrayList<Integer>(Arrays.asList(2,10,600,20,30,4,5)), 0);
+        AmbiguitieService.recursionList(new ArrayList<Integer>(Arrays.asList(2,10,200,20,100,20,5)), 0);
     }
 
     private static void createAmbiguitieList(Integer[][] array,List<Integer>list, int index) {
@@ -44,16 +44,18 @@ public class AmbiguitieService {
 
 //        THREE digits
         if(isThreeDigit(list,index)){
-            DigitUtils.threeDigitsneighborNumber(list,index);
+            DigitUtils.threeDigitsNeighborNumber(list,index);
             if(( list.size()==index+1)){//checks if its the last digit of the list
                 Integer[][] array = neighborNumbers(list.get(index),null);
                 list.remove(index);
                 createAmbiguitieList(array,list,index);
             }
             else {
-                Integer[][] array = threeDigitsneighborNumber(list,index);
+                Integer[][] array = threeDigitsNeighborNumber(list,index);
+
                 for (int i = 0; i < array.length; i++){
                     list.remove(index);
+                    System.out.println(Arrays.toString(array[i]));
             }
                 createAmbiguitieList(array,list,index);
             }
