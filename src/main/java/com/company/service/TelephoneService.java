@@ -13,17 +13,18 @@ import static com.company.model.Phone.PHONE_PREFIX14;
 public class TelephoneService {
 
 
-    public static void create(String number){
+    public static Telephone create(String number){
 
         if( (number.startsWith( MOBILE_PREFIX10)) ||
                 (number.startsWith( MOBILE_PREFIX14))){
-            new Mobile(number);
+          return   new Mobile(number);
 
         }else if((number.startsWith( PHONE_PREFIX10)) ||
                 (number.startsWith( PHONE_PREFIX14))){
-            new Phone(number);
+           return new Phone(number);
         }else{
-            Telephone.getTelephoneList().put(number, Validator.INVALID);
+           return new Telephone(number);
         }
     }
+
 }

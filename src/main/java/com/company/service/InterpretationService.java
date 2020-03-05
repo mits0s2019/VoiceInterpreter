@@ -92,6 +92,10 @@ public class InterpretationService {
                                            {list.get(index) + list.get(index + 1)}};
                 }
             }
+            else if(list.get(index+1)<10){
+                return new Integer[][]{{list.get(index),list.get(index + 1)},
+                                       {list.get(index) + list.get(index + 1)}};
+            }
             else {
                 return new Integer[][]{{list.get(index) +getFirstDigit(list.get(index+1)), getRemainder(list.get(index+1))},
                                        {list.get(index) + list.get(index + 1)}};

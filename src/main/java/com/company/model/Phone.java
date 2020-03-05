@@ -1,9 +1,9 @@
 package com.company.model;
 
-import com.company.model.Telephone;
+
 import com.company.utils.Validator;
 
-public class Phone extends Telephone {
+public class Phone extends Telephone implements NumberValidationInterface {
 
     public final static String PHONE_PREFIX10="2";
     public final static String PHONE_PREFIX14="00302";
@@ -13,7 +13,6 @@ public class Phone extends Telephone {
     public Phone(String number) {
         super(number);
         setValidation(number);
-        addToTelephoneList();
     }
 
     @Override

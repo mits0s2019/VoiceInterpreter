@@ -8,14 +8,15 @@ import java.time.format.DateTimeFormatter;
 
 public class ExceptionHandler extends Exception {
 
-    private String errorNumber= InputNumber.get();
+    private String errorNumber;
     private String errorMessage;
     private LocalDate localDate=LocalDate.now();
     private String localTime=LocalTime.now().format(DateTimeFormatter.ofPattern("HH:mm:ss"));
 
 
 
-    public ExceptionHandler(String errorMessage) {
+    public ExceptionHandler(String errorMessage,String inputNumber) {
+        this.errorNumber=inputNumber;
         this.errorMessage = errorMessage;
     }
 

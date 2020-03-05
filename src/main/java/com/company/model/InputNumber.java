@@ -3,21 +3,35 @@ package com.company.model;
 import com.company.utils.InputNumberUtils;
 import com.company.utils.Validator;
 
+import java.util.Map;
+import java.util.TreeMap;
+
 public class InputNumber {
 
-    private static String inputNumber;
+    private  String inputNumber;
+    private Map<String,String> interpretationNumbers=new TreeMap<>();
 
-    public static void set(String inputNumber) {
-        InputNumber.inputNumber = inputNumber;
+    public InputNumber(String inputNumber) {
+        this.inputNumber = inputNumber;
     }
 
-    public static String get() {
-        return inputNumber;
+    public  String get() {
+        return this.inputNumber;
     }
-    public static String removeSpaces(){
+
+    public  String removeSpaces(){
         return InputNumberUtils.removeSpaceFromInputNumber(inputNumber);
     }
-    public static boolean validate(){
+
+    public  boolean validate(){
         return Validator.validateInputNumber(inputNumber);
+    }
+
+    public void setInterpretationNumbers(Telephone telephone) {
+        interpretationNumbers.put(telephone.getInputNumber(),telephone.getValid());
+    }
+
+    public Map<String, String> getInterpretationNumbers() {
+        return interpretationNumbers;
     }
 }

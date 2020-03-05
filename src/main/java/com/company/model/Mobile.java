@@ -4,7 +4,7 @@ package com.company.model;
 import com.company.utils.Validator;
 
 
-public class Mobile extends Telephone {
+public class Mobile extends Telephone implements NumberValidationInterface {
 
     public final static String MOBILE_PREFIX10="69";
     public final static String MOBILE_PREFIX14="003069";
@@ -15,7 +15,6 @@ public class Mobile extends Telephone {
     public Mobile(String number) {
         super(number);
         setValidation(number);
-        addToTelephoneList();
     }
 
     @Override
