@@ -12,10 +12,6 @@ public class DigitUtils {
         return list.get(index)>=100 && list.get(index)<1000;
     }
 
-    public static boolean isThreeDigit( int index){
-        return index>=100 && index<1000;
-    }
-
     public static Integer[] splitTwoDigit(Integer num1) {
         if(!(num1%10==0) && num1>10 && num1<100) {
             int firstDigit=(num1-num1%10);
@@ -37,8 +33,10 @@ public class DigitUtils {
         }
     }
 
-
-    public static int getFirstDigitOfNumber(int number){
-        return Integer.parseInt(Integer.toString(number).substring(0, 1));
+    public static int getFirstDigit(int num){
+        return Integer.parseInt(Integer.toString(num).substring(0, 1));
+    }
+    public static int getRemainder(int num){
+        return Integer.parseInt(String.valueOf(num).substring(1));
     }
 }

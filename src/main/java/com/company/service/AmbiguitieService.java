@@ -1,15 +1,13 @@
 package com.company.service;
 
 
-import com.company.ExceptionHandler;
+import com.company.exception.ExceptionHandler;
 import com.company.model.AmbiguitieList;
 import com.company.utils.ArrayUtils;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
 import static com.company.service.InterpretationService.*;
 import static com.company.utils.DigitUtils.*;
 
@@ -41,7 +39,6 @@ public class AmbiguitieService {
         if (list.size() == index) {
             return ;
         }
-
         if(isThreeDigit(list,index)){
             if(( list.size()==index+1)){                         //checks if its the last digit of the list
                 if(list.get(index)%100==0){
@@ -60,10 +57,9 @@ public class AmbiguitieService {
                     Integer[][] array =threeDigitsNeighborNumber(list,index);
                     list.remove(index);
                     createAmbiguitieList(array,list,index);
-                }else {
+                }else{
                     Integer[][] array = threeDigitsNeighborNumber(list, index);
                     for (int i = 0; i < array.length; i++) {
-//                    System.out.println(Arrays.toString(array[i]));
                         list.remove(index);
                     }
                     createAmbiguitieList(array, list, index);

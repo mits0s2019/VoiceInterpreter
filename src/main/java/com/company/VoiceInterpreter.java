@@ -1,5 +1,6 @@
 package com.company;
 
+import com.company.exception.ExceptionHandler;
 import com.company.model.AmbiguitieList;
 import com.company.model.InputNumber;
 import com.company.model.Telephone;
@@ -14,7 +15,6 @@ public class VoiceInterpreter {
     public static void main(String[] args) {
 
         System.out.print("Give your number : ");
-        String inputNumber="2 10 23 40";
         InputNumber.set(new Scanner(System.in).nextLine().trim());
 
         if(InputNumber.validate()){

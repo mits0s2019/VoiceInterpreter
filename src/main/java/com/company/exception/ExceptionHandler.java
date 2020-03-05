@@ -1,4 +1,4 @@
-package com.company;
+package com.company.exception;
 
 import com.company.model.InputNumber;
 
