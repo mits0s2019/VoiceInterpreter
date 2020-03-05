@@ -46,4 +46,21 @@ class DigitUtilsTest {
 
         assertArrayEquals(expected,actual);
     }
+
+    @Test
+    void getRemainder() {
+        int num=430;
+
+        int actualRemainder=DigitUtils.getRemainder(num);
+        assertEquals(30,actualRemainder);
+
+    }
+
+    @Test
+    void getFirstDigit() {
+        int num=430;
+
+        int actual=DigitUtils.getFirstDigit(num);
+        assertEquals(4,DigitUtils.getFirstDigit(430));
+    }
 }
