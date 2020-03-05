@@ -65,11 +65,16 @@ public class InterpretationService {
             if(list.get(index+1)>99){
                 return new Integer[][]{{list.get(index)}};
             }
-            else if(list.get(index+1)<99 && list.get(index+1)%10==0 &&
-                    list.get(index+2)<10){
-                return new Integer[][]{{list.get(index), list.get(index + 1), list.get(index + 2)},
-                        {list.get(index) + list.get(index + 1), list.get(index + 2)},
-                        {list.get(index) + list.get(index + 1) + list.get(index + 2)}};
+            else if(list.get(index+1)<99 && list.get(index+1)%10==0){
+                        if (index + 2 < list.size() && list.get(index + 2)<10){
+                            return new Integer[][]{{list.get(index), list.get(index + 1), list.get(index + 2)},
+                                                 {list.get(index) + list.get(index + 1), list.get(index + 2)},
+                                                {list.get(index) + list.get(index + 1) + list.get(index + 2)}};
+                        }
+                        else{
+                          return new Integer[][]{{list.get(index), list.get(index + 1)},
+                                    {list.get(index) + list.get(index + 1)}};
+                        }
             }
             else {
                 return new Integer[][]{{list.get(index), list.get(index + 1)},
@@ -78,4 +83,3 @@ public class InterpretationService {
         }
     }
 }
-

@@ -23,7 +23,7 @@ public class AmbiguitieService {
         int[] arrayInt = ArrayUtils.stringToInt(arrayInput);
         List<Integer> arrayInputList = Arrays.stream(arrayInt).boxed().collect(Collectors.toList());
 
-        AmbiguitieService.recursionList(arrayInputList, 0);
+        recursionList(arrayInputList, 0);
     }
 
 

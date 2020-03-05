@@ -14,7 +14,7 @@ public class VoiceInterpreter {
 
     public static void main(String[] args) {
 
-        System.out.print("Give your number : ");
+        System.out.print("Give your phone number : ");
         InputNumber.set(new Scanner(System.in).nextLine().trim());
 
         if(InputNumber.validate()){

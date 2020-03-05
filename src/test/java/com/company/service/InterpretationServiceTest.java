@@ -1,6 +1,10 @@
 package com.company.service;
 
+import com.company.exception.ExceptionHandler;
 import org.junit.jupiter.api.Test;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -8,7 +12,7 @@ class InterpretationServiceTest {
 
 
     /**
-     *  This method takes two numbers as an input... If The first number is two digit then
+     *  This method takes two numbers as an input... If The first number is  two digit then
      *                                                          35,5               30 2
      *                                                          /  \               /  \
      *                                                    [35,5] [30,5,5]     [30,2]  [32]
@@ -27,5 +31,16 @@ class InterpretationServiceTest {
 
         assertArrayEquals(expectedArray1,actualArray1);
         assertArrayEquals(expectedArray2,actualArray2);
+    }
+
+    @Test
+    void threeDigitsNeighborNumber() throws ExceptionHandler {
+
+        List<Integer> list = Arrays.asList(5,6,400,30,4);
+
+        Integer[][] expected=new Integer[][]{{400,30,4},{430,4},{434}};
+
+        Integer[][] actual=InterpretationService.threeDigitsNeighborNumber(list,2);
+        assertArrayEquals(expected,actual);
     }
 }
