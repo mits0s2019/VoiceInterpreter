@@ -49,10 +49,10 @@ class DigitUtilsTest {
 
     @Test
     void getRemainder() {
-        int num=430;
+        int num=432;
 
         int actualRemainder=DigitUtils.getRemainder(num);
-        assertEquals(30,actualRemainder);
+        assertEquals(32,actualRemainder);
 
     }
 

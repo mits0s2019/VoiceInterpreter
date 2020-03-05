@@ -33,12 +33,23 @@ class InterpretationServiceTest {
         assertArrayEquals(expectedArray2,actualArray2);
     }
 
+
+    /**
+     * This method takes a list as an input and its index ... If it's a three digit number then
+     * checks the followings numbers.Depending on the following numbers, there are a lot of possible combinations...
+     *
+     *                   if the index is '2' then the following method will execute
+     *
+     *                               [1,33,400,50,6]
+     *                                   /    \
+     *@return                    [[400,50,6],[450,6],[456]]
+     */
     @Test
     void threeDigitsNeighborNumber() throws ExceptionHandler {
 
-        List<Integer> list = Arrays.asList(5,6,400,30,4);
+        List<Integer> list = Arrays.asList(1,33,400,50,6);
 
-        Integer[][] expected=new Integer[][]{{400,30,4},{430,4},{434}};
+        Integer[][] expected=new Integer[][]{{400,50,6},{450,6},{456}};
 
         Integer[][] actual=InterpretationService.threeDigitsNeighborNumber(list,2);
         assertArrayEquals(expected,actual);

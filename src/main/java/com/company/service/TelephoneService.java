@@ -3,7 +3,6 @@ package com.company.service;
 import com.company.model.Mobile;
 import com.company.model.Phone;
 import com.company.model.Telephone;
-import com.company.utils.Validator;
 
 import static com.company.model.Mobile.MOBILE_PREFIX10;
 import static com.company.model.Mobile.MOBILE_PREFIX14;
@@ -26,5 +25,4 @@ public class TelephoneService {
            return new Telephone(number);
         }
     }
-
 }
