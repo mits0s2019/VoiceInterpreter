@@ -43,22 +43,35 @@ public class AmbiguitieService {
         }
 
         if(isThreeDigit(list,index)){
-            if(( list.size()==index+1)){//checks if its the last digit of the list
-                Integer[][] array = twoDigitsneighborNumbers(list.get(index),null);
-                list.remove(index);
-                createAmbiguitieList(array,list,index);
+            if(( list.size()==index+1)){                         //checks if its the last digit of the list
+                if(list.get(index)%100==0){
+                    Integer[][] array = twoDigitsneighborNumbers(list.get(index), null);
+                    list.remove(index);
+                    createAmbiguitieList(array, list, index);
+                }
+                else{
+                    Integer[][] array =threeDigitsNeighborNumber(list,index);
+                    list.remove(index);
+                    createAmbiguitieList(array,list,index);
+                }
             }
             else {
-                Integer[][] array =threeDigitsNeighborNumber(list,index);
-                for (int i = 0; i < array.length; i++){
+                if(list.get(index)%100!=0){
+                    Integer[][] array =threeDigitsNeighborNumber(list,index);
                     list.remove(index);
-                    System.out.println(Arrays.toString(array[i]));
+                    createAmbiguitieList(array,list,index);
+                }else {
+                    Integer[][] array = threeDigitsNeighborNumber(list, index);
+                    for (int i = 0; i < array.length; i++) {
+//                    System.out.println(Arrays.toString(array[i]));
+                        list.remove(index);
+                    }
+                    createAmbiguitieList(array, list, index);
                 }
-                createAmbiguitieList(array,list,index);
             }
         }
-        else if (isTwoDigit(list, index)) {//checks a digits and the  following digit
-            if(( list.size()==index+1)){//checks if its the last digit of the list
+        else if (isTwoDigit(list, index)) {                      //checks a digits and the  following digit
+            if(( list.size()==index+1)){                         //checks if its the last digit of the list
                 Integer[][] array = twoDigitsneighborNumbers(list.get(index),null);
                 list.remove(index);
                 createAmbiguitieList(array,list,index);

@@ -31,7 +31,6 @@ public class VoiceInterpreter {
 
             System.out.println(new PrintingMap<>(Telephone.getTelephoneList()));
             System.out.println("***************************************************************");
-
         }
         else{
             System.out.println("Invalid Input");

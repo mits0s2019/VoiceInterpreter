@@ -29,9 +29,9 @@ class DigitUtilsTest {
     @Test
     void splitThreeDigit() {
 
-        int number=615;
+        int number=605;
 
-        Integer[] expected=new Integer[]{600,15};
+        Integer[] expected=new Integer[]{600,05};
         Integer[] actual=  DigitUtils.splitThreeDigit(number);
 
         assertArrayEquals(expected,actual);
