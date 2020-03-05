@@ -7,21 +7,21 @@ import java.util.Map;
  * PrintingMap is a map in order to print the final result
  */
 
-public class PrintingMap<K,V> {
+public class PrintingMap {
 
-    private Map<K, V> map;
+    private Map<String,String> map;
 
-    public PrintingMap(Map<K, V> map) {
+    public PrintingMap(Map<String,String> map) {
         this.map = map;
     }
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Iterator<Map.Entry<K, V>> iter = map.entrySet().iterator();
+        Iterator<Map.Entry<String,String>> iter = map.entrySet().iterator();
         int i=1;
         while (iter.hasNext()) {
 
-            Map.Entry<K, V> entry = iter.next();
+            Map.Entry<String,String> entry = iter.next();
             sb.append("Interpretation "+i+" : ");
             sb.append(entry.getKey());
             sb.append("\t\t\t");

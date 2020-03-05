@@ -14,7 +14,7 @@ import static com.company.utils.DigitUtils.*;
 public class AmbiguitieService {
 
     /**
-     *This method takes the users input and put it in a List<Integer> and pass it to a recursion method.
+     *This method takes the users input and puts it in a List<Integer> and pass it to a recursion method.
      *
      * @param inputNumber users input number
      */
@@ -86,7 +86,7 @@ public class AmbiguitieService {
 
     /**
      *@param list                             [2,10,30,5]
-     * @param array [{30,5},{35}}                  /  \
+     * @param array [{30,5},{35}]                  /  \
      * @result newList                   [2,10,30,5]  [2,10,35]    having created the new lists then @recursionList() is called again
      *                                                             and the index moves to the next number .
      */

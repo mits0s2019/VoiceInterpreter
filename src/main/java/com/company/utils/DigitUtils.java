@@ -12,6 +12,10 @@ public class DigitUtils {
         return list.get(index)>=100 && list.get(index)<1000;
     }
 
+    /**
+     * @param num1 = 65
+     * @return  [60 , 5]
+     */
     public static Integer[] splitTwoDigit(Integer num1) {
         if(!(num1%10==0) && num1>10 && num1<100) {
             int firstDigit=(num1-num1%10);
@@ -22,6 +26,10 @@ public class DigitUtils {
         }
     }
 
+    /**
+     * @param num1 = 666
+     * @return  [600 , 66]
+     */
     public static Integer[] splitThreeDigit(Integer num1) {
         if((num1%100!=0) && num1>100 && num1<1000) {
             int firstDigit = num1-num1%100;

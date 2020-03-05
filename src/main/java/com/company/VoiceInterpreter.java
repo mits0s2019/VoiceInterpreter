@@ -29,7 +29,7 @@ public class VoiceInterpreter {
             }
             AmbiguitieList.getAmbiguities().stream().forEach(number-> TelephoneService.create(number));
 
-            System.out.println(new PrintingMap<>(Telephone.getTelephoneList()));
+            System.out.println(new PrintingMap(Telephone.getTelephoneList()));
             System.out.println("***************************************************************");
         }
         else{
